@@ -5,7 +5,7 @@ module Erptestcasehelpers
     Dir.pwd =~ /erp-testes$/ ? true : false
   end
 
-  def self.require file
+  def self.test_require file
     if using_rake?
       require "./#{file}"
     else
@@ -15,9 +15,9 @@ module Erptestcasehelpers
 
   def self.require_libs folder
     if using_rake?
-      require "./#{folder}/lib/imports"
+      test_require "./#{folder}/lib/imports"
     else
-      require "./lib/imports"
+      test_require "./lib/imports"
     end
   end
 end

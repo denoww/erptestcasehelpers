@@ -2,7 +2,7 @@ require "erptestcasehelpers/version"
 
 module Erptestcasehelpers
   def self.using_rake?
-    Dir.pwd =~ /erp-testes$/
+    Dir.pwd =~ /erp-testes$/ ? true : false
   end
 
   def self.require file

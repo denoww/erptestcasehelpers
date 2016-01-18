@@ -2,8 +2,12 @@ require "erptestcasehelpers/version"
 
 module Erptestcasehelpers
   def self.using_rake?
-    fail ARGV[0].to_s
-    Dir.pwd =~ /erp-testes$/ ? true : false
+    case ARGV[0]
+    when true, 'true', 1, '1'
+      return true
+    else
+      return false
+    end
   end
 
   def self.test_require file
